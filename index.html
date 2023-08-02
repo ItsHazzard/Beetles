@@ -21,4 +21,82 @@
             background-repeat: no-repeat;
           }
         </style>
+        <style>
+        body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .text-container {
+      position: absolute;
+      top: 5%; /* Move the container down w/ higher number */
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'ComicSans', cursive; /* Use the Handjet font */
+    }
+
+    /* Optional styles for the text */
+    .text {
+      font-size: 60px; /* Increase font size for emphasis */
+      font-weight: bold;
+      margin-bottom: 10px; /* Adjust spacing between the two lines of text */
+    }
+     
+    /* Styles for the second line of text */
+    .sub-text {
+      font-size: 24px;
+      color: black;
+      font-weight: bold;
+    }
+    
+  /* Styles for the buttons */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: transparent; /* Set background to transparent */
+    color: Black; /* Set text color to black */
+    cursor: pointer;
+    margin: 45px;
+    transition: all 0.3s ease;
+    /* Set a gradient border */
+    border: 2px solid;
+    border-image: linear-gradient(to bottom, darkblue, darkpurple ) 1;
+    /* Set the border-image-slice property to control the width of the border */
+    border-image-slice: 1;
+  }
+
+  .btn:hover {
+    color: grey; /* Set text color to black on hover */
+    /* Change the gradient border on hover */
+    border-image: lightblue 1;
+    /* Make the button bigger on hover */
+    transform: scale(1.1); /* Adjust the scale factor as needed */
+  }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="text-container">
+    <p class="text">Dung Beetles</p>
+    <p class="sub-text">By Harry McNamara </p> <!-- Second line of text -->    
+  </div>
+
+  <div>
+    <button class="btn" onclick="/Page 1.html">Page One</button>
+    <button class="btn" onclick="/Page 2.html">Page Two</button> 
+    <button class="btn" onclick="/Page Three.html">Page Three</button> <!-- Add About Me button -->
+  </div>
 </html>
