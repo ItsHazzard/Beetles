@@ -1,89 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Dung Beetle</title>
-        <link rel="icon" href="" type="image/png">
-        <style>
-          html, body {
-            height: 100%;
-            margin: 0%;
-          }
-      
-          body {
-            /* Replace these colors with the ones you want for your gradient */
-            background: linear-gradient(to bottom, blue, pink);
-            /* For older browsers that don't support gradients, fallback color */
-            background: -webkit-linear-gradient(top, blue, pink);
-            background: -moz-linear-gradient(top, blue, pink);
-            background: -o-linear-gradient(top, blue, pink);
-            
-            /* Prevent the background from repeating */
-            background-repeat: no-repeat;
-          }
-        </style>
-        <style>
-        body {
+<head>
+    <title>Dung Beetles</title>
+    <link rel="icon" href="https://itshazzard.github.io/Beetles/Photos/Favicon.png" type="image/png">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0%;
+      }
+  
+      body {
+        /* Replace these colors with the ones you want for your gradient */
+        background: linear-gradient(purple,blue);
+        
+        /* Prevent the background from repeating */
+        background-repeat: no-repeat;
+      }
+    </style>
+    
+    <style>
+    body {
       margin: 0;
       padding: 0;
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column; /* Change flex direction to column */
     }
 
     .text-container {
       position: absolute;
-      top: 5%; /* Move the container down w/ higher number */
+      top: 5%;
       left: 0;
       right: 0;
       text-align: center;
-      font-family: 'ComicSans', cursive; /* Use the Handjet font */
+      font-family: 'ComicSans', cursive;
     }
 
-    /* Optional styles for the text */
     .text {
-      font-size: 60px; /* Increase font size for emphasis */
+      font-size: 60px;
       font-weight: bold;
-      margin-bottom: 10px; /* Adjust spacing between the two lines of text */
+      margin-bottom: 10px;
     }
      
-    /* Styles for the second line of text */
     .sub-text {
       font-size: 24px;
       color: black;
       font-weight: bold;
     }
     
-  /* Styles for the buttons */
-  .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: transparent; /* Set background to transparent */
-    color: Black; /* Set text color to black */
-    cursor: pointer;
-    margin: 45px;
-    transition: all 0.3s ease;
-    /* Set a gradient border */
-    border: 2px solid;
-    border-image: linear-gradient(to bottom, darkblue, darkpurple ) 1;
-    /* Set the border-image-slice property to control the width of the border */
-    border-image-slice: 1;
-  }
+    .btn-container {
+      margin-top: 20px; /* Add margin to separate buttons from text */
+    }
 
-  .btn:hover {
-    color: grey; /* Set text color to black on hover */
-    /* Change the gradient border on hover */
-    border-image: lightblue 1;
-    /* Make the button bigger on hover */
-    transform: scale(1.1); /* Adjust the scale factor as needed */
-  }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: transparent;
+      color: White;
+      cursor: pointer;
+      margin: 10px;
+      transition: all 0.3s ease;
+      border: 2px solid;
+      border-image: linear-gradient(to bottom, black, grey ) 1;
+      border-image-slice: 1;
+    }
 
-    .close-btn {
+    .btn:hover {
+      color: grey;
+      border-image: linear-gradient(lightblue, cyan) 1;
+      transform: scale(1.3);
+    }
+
+    /* Styles for the popup */
+    .popup-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      z-index: 9999;
+      align-content: center;
+      transform: scale(1.5); /* Make the popup 1.5x bigger */
+    }
+
+    .popup-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: black;
+      color: white;
+      border-radius: 10px;
+      width: 60%;
+      height: 60%;
+      overflow: auto;
+    }
+
+    .close-btn-popup {
       position: absolute;
       top: 10px;
       right: 10px;
       cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .close-btn-popup:hover {
+    transform: scale(1.8);
+    color: red;
     }
 
   </style>
@@ -91,12 +121,91 @@
 <body>
   <div class="text-container">
     <p class="text">Dung Beetles</p>
-    <p class="sub-text">By Harry McNamara </p> <!-- Second line of text -->    
+    <p class="sub-text">By Harry McNamara</p>    
   </div>
 
-  <div>
-    <button class="btn" onclick="/Page 1.html">Page One</button>
-    <button class="btn" onclick="/Page 2.html">Page Two</button> 
-    <button class="btn" onclick="/Page Three.html">Page Three</button> <!-- Add About Me button -->
+  <div class="btn-container">
+    <button class="btn" onclick="openPopup('Page1popup')">What It Looks Like</button>
+    <button class="btn" onclick="openPopup('Page2popup')">Related Species</button>
+    <button class="btn" onclick="openPopup('Page3popup')">Main Types</button>
   </div>
+
+  <div class="btn-container">
+    <button class="btn" onclick="openPopup('Page4popup')">Diet</button>
+    <button class="btn" onclick="openPopup('Page5popup')">Lidecycle</button>
+    <button class="btn" onclick="openPopup('Page6popup')">Benifits</button>
+  </div>
+  
+  <!-- Popup containers -->
+  <div class="popup-container" id="Page1popup">
+    <div class="popup-content">
+      <span class="close-btn-popup" onclick="closePopup('Page1popup')">&#10006;</span>
+      <h1>What It Looks Like?</h1>
+      <p>This is the content of the first popup.</p>
+    </div>
+  </div>
+
+  <div class="popup-container" id="Page2popup">
+    <div class="popup-content">
+      <span class="close-btn-popup" onclick="closePopup('Page2popup')">&#10006;</span>
+      <h1>What Are Its Related Species?</h1>
+      <p>This is the content of the second popup.</p>
+    </div>
+  </div>
+
+  <div class="popup-container" id="Page3popup">
+    <div class="popup-content">
+      <span class="close-btn-popup" onclick="closePopup('Page3popup')">&#10006;</span>
+      <h1>What Are The Main Species</h1>
+      <p>This is the content of the third popup.</p>
+    </div>
+  </div>
+
+  <div class="popup-container" id="Page4popup">
+    <div class="popup-content">
+      <span class="close-btn-popup" onclick="closePopup('Page4popup')">&#10006;</span>
+      <h1>What Is Its Diet</h1>
+      <p>This is the content of the fourth popup.</p>
+    </div>
+  </div>
+
+  <div class="popup-container" id="Page5popup">
+    <div class="popup-content">
+      <span class="close-btn-popup" onclick="closePopup('Page5popup')">&#10006;</span>
+      <h1>What Is Its Lifecycle</h1>
+      <p>This is the content of the fifth popup.</p>
+    </div>
+  </div>
+
+  <div class="popup-container" id="Page6popup">
+    <div class="popup-content">
+      <span class="close-btn-popup" onclick="closePopup('Page6popup')">&#10006;</span>
+      <h1>What Are The Benifits</h1>
+      <p>This is the content of the sixth popup.</p>
+    </div>
+  </div>
+  
+  <script>
+    function openPopup(popupId) {
+      document.getElementById(popupId).style.display = 'block';
+      document.addEventListener('keydown', handleEscapeKey);
+    }
+
+    function closePopup(popupId) {
+      document.getElementById(popupId).style.display = 'none';
+      document.removeEventListener('keydown', handleEscapeKey);
+    }
+
+    function handleEscapeKey(event) {
+      if (event.keyCode === 27) {
+        closePopup('Page1popup');
+        closePopup('Page2popup');
+        closePopup('Page3popup');
+        closePopup('Page4popup');
+        closePopup('Page5popup');
+        closePopup('Page6popup');
+      }
+    }
+  </script>
+</body>
 </html>
