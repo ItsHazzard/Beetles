@@ -42,14 +42,35 @@
       font-size: 60px;
       font-weight: bold;
       margin-bottom: 10px;
+      color: white;
     }
      
     .sub-text {
       font-size: 24px;
-      color: black;
+      color: white;
       font-weight: bold;
     }
     
+    .title {
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+    }
+   
+    .description {
+      font-size: 27px;
+      color: white;
+      font-weight: bold;
+      margin-left: 18%;
+      margin-top: 18%;
+    }
+    
+    .image {
+      margin-top: -15%;
+      margin-left: 2%;
+      transform: scale(1.4);
+    }
+
     .btn-container {
       margin-top: 20px; /* Add margin to separate buttons from text */
     }
@@ -64,57 +85,57 @@
       margin: 10px;
       transition: all 0.3s ease;
       border: 2px solid;
-      border-image: linear-gradient(to bottom, black, grey ) 1;
+      border-image: linear-gradient(25deg, darkgrey, black ) 1;
       border-image-slice: 1;
     }
 
     .btn:hover {
       color: grey;
-      border-image: linear-gradient(lightblue, cyan) 1;
+      border-image: linear-gradient(-25deg, lightblue, cyan) 1;
       transform: scale(1.3);
     }
 
     /* Styles for the popup */
     .popup-container {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(5px);
-      z-index: 9999;
-      align-content: center;
-      transform: scale(1.5); /* Make the popup 1.5x bigger */
-    }
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    align-content: center;
+    transform: scale(1.5); /* Make the popup 1.5x bigger */
+  }
 
-    .popup-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 20px;
-      background-color: black;
-      color: white;
-      border-radius: 10px;
-      width: 60%;
-      height: 60%;
-      overflow: auto;
-    }
+  .popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    width: 60%;
+    height: 60%;
+    overflow: auto;
+  }
 
-    .close-btn-popup {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
+  .close-btn-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
 
-    .close-btn-popup:hover {
+  .close-btn-popup:hover {
     transform: scale(1.8);
     color: red;
-    }
+  }
 
   </style>
 </head>
@@ -122,6 +143,10 @@
   <div class="text-container">
     <p class="text">Dung Beetles</p>
     <p class="sub-text">By Harry McNamara</p>    
+  </div>
+ 
+   <div class="btn-container">
+    <button class="btn" onclick="openPopup('Page7popup')">Description</button>
   </div>
 
   <div class="btn-container">
@@ -135,13 +160,21 @@
     <button class="btn" onclick="openPopup('Page5popup')">Lidecycle</button>
     <button class="btn" onclick="openPopup('Page6popup')">Benifits</button>
   </div>
+
+
   
   <!-- Popup containers -->
   <div class="popup-container" id="Page1popup">
     <div class="popup-content">
       <span class="close-btn-popup" onclick="closePopup('Page1popup')">&#10006;</span>
       <h1>What It Looks Like?</h1>
-      <p>This is the content of the first popup.</p>
+      <p>TDung beetles, a fascinating group of insects, exhibit a remarkable appearance tailored for their ecological role.
+      These compact creatures typically possess a robust and streamlined body, 
+      adorned with a glossy exoskeleton that varies in color from iridescent greens and blues to earthy browns and blacks. 
+      Their distinctive clubbed antennae serve as keen sensory tools, aiding them in detecting odors and locating their precious resource: dung. 
+      With powerful legs designed for digging and rolling, dung beetles exhibit impressive strength as they navigate their chosen habitat, 
+      sculpting and transporting dung balls with precision and purpose. Overall, 
+      their appearance is a testament to their specialized adaptation and pivotal role in nutrient recycling within various ecosystems.</p>
     </div>
   </div>
 
@@ -149,15 +182,26 @@
     <div class="popup-content">
       <span class="close-btn-popup" onclick="closePopup('Page2popup')">&#10006;</span>
       <h1>What Are Its Related Species?</h1>
-      <p>This is the content of the second popup.</p>
+      <p>Dung beetles belong to a diverse and fascinating group of insects known as scarab beetles (family Scarabaeidae). 
+        Within this family, dung beetles play a crucial ecological role by aiding in the decomposition and recycling of animal waste. 
+        Their behavior and adaptations vary among related species, but all share a common penchant for utilizing dung as a resource. Some species are rollers, 
+        shaping dung into neat balls and rolling them away for burial as a food source or nesting site. Others are tunnelers, burrowing beneath dung piles and creating elaborate galleries for both food storage and reproduction. 
+        These remarkable insects have evolved unique adaptations, such as keen sensory abilities to locate dung, impressive strength for moving heavy dung balls, 
+        and a remarkable ability to navigate using the Milky Way for guidance. The diverse strategies and behaviors exhibited by dung beetles and their related species 
+        highlight the intricacies of nature's ingenious solutions for nutrient recycling and ecosystem balance.</p>
     </div>
   </div>
 
   <div class="popup-container" id="Page3popup">
     <div class="popup-content">
       <span class="close-btn-popup" onclick="closePopup('Page3popup')">&#10006;</span>
-      <h1>What Are The Main Species/h1>
-      <p>This is the content of the third popup.</p>
+      <h1>What Are The Main Species</h1>
+      <p>Dung beetles, a fascinating group of insects, encompass three main species that exhibit distinct ecological roles: rollers, tunnelers, and dwellers. 
+        Rollers are known for their unique behavior of sculpting dung into perfectly spherical balls and rolling them away to secure locations, 
+        where they bury the balls for later consumption or reproduction. Tunneler dung beetles, on the other hand, burrow directly beneath dung piles, 
+        forming intricate tunnels while simultaneously burying the dung for nourishment and egg-laying. Lastly, dwellers prefer to reside within dung piles themselves, 
+        directly feeding on the dung and using it as both sustenance and a habitat. These diverse dung beetle species play crucial roles in nutrient recycling and soil enrichment, 
+        contributing to ecosystem health and balance in various environments around the world.</p>
     </div>
   </div>
 
@@ -165,7 +209,12 @@
     <div class="popup-content">
       <span class="close-btn-popup" onclick="closePopup('Page4popup')">&#10006;</span>
       <h1>What Is Its Diet</h1>
-      <p>This is the content of the fourth popup.</p>
+      <p>Dung beetles, often regarded as nature's sanitation crew, have a unique and essential diet centered around feces. 
+        These remarkable insects play a crucial ecological role by recycling animal waste into a valuable resource. Dung beetles locate, roll, 
+        or bury dung into underground chambers, providing them with both sustenance and a place to lay their eggs. 
+        Their diet not only aids in nutrient cycling and soil enrichment but also reduces the prevalence of disease-causing organisms in the environment. 
+        Dung beetles' dietary habits exemplify the intricate interplay between organisms and their surroundings, 
+        showcasing the remarkable ways in which nature maintains balance and sustains life.</p>
     </div>
   </div>
 
@@ -173,7 +222,13 @@
     <div class="popup-content">
       <span class="close-btn-popup" onclick="closePopup('Page5popup')">&#10006;</span>
       <h1>What Is Its Lifecycle</h1>
-      <p>This is the content of the fifth popup.</p>
+      <p>Dung beetles, those industrious and often underrated insects, lead a fascinating lifestyle intricately tied to their ecological role. 
+        These resilient creatures are nature's cleanup crew, tirelessly scavenging and rolling balls of dung for sustenance and reproduction. 
+        Guided by an extraordinary sense of smell, dung beetles locate and manipulate dung with remarkable efficiency. They sculpt these precious orbs, 
+        often larger than themselves, before burying them as food caches or nests for their developing offspring. Beyond their crucial role in nutrient recycling, 
+        dung beetles contribute to soil aeration and fertility, ultimately benefiting ecosystems and agriculture. 
+        Their perseverance and ingenuity in dealing with the less glamorous aspects of life showcase the marvels of adaptation and the 
+        interconnectedness of all living beings in our intricate web of existence.</p>
     </div>
   </div>
 
@@ -181,10 +236,35 @@
     <div class="popup-content">
       <span class="close-btn-popup" onclick="closePopup('Page6popup')">&#10006;</span>
       <h1>What Are The Benifits</h1>
-      <p>This is the content of the sixth popup.</p>
+      <p>Dung beetles play a crucial and often underestimated role in ecosystems worldwide. These industrious insects are nature's efficient waste managers, 
+        as they tirelessly roll, bury, and consume animal dung. In doing so, they provide several essential benefits. First and foremost, dung beetles help to break down and recycle organic matter, 
+        contributing to nutrient cycling and soil health. By burying dung underground, they enhance soil aeration and drainage, promoting plant growth. Additionally, 
+        their activities reduce the prevalence of disease-carrying flies and parasites, indirectly benefiting both wildlife and livestock. Ultimately, 
+        dung beetles are unsung heroes of the natural world, demonstrating the intricate interconnectedness of species and the vital functions they perform to maintain the balance of ecosystems.</p>
     </div>
   </div>
+
   
+  <div class="popup-container" id="Page7popup">
+    <div class="popup-content">
+      <span class="close-btn-popup" onclick="closePopup('Page7popup')">&#10006;</span>
+      <div class="text-container">
+        <p class="title">Dung Beetles Description</p>
+      </div>
+    
+      <div class="description-image-container">
+        <p class="description">Dung beetles have dark, round bodies, 
+          six legs and long flying wings folded under hard, protective covers. 
+          Some male dung beetles have strong horns on their heads, too. 
+          Found worldwide on every continent except Antarctica, 
+          these brilliant bugs live in habitats ranging from hot, 
+          dry deserts to lush forests.</p>
+      
+        <img class="image" src="https://itshazzard.github.io/Beetles/Photos/Beetle.png" alt="Dung Beetle">
+      </div>
+    </div>
+  </div>
+
   <script>
     function openPopup(popupId) {
       document.getElementById(popupId).style.display = 'block';
@@ -197,13 +277,14 @@
     }
 
     function handleEscapeKey(event) {
-      if (event.keyCode === 27) {
+      if (event.key === "Escape" || event.key === "Esc") {
         closePopup('Page1popup');
         closePopup('Page2popup');
         closePopup('Page3popup');
         closePopup('Page4popup');
         closePopup('Page5popup');
         closePopup('Page6popup');
+        closePopup('Page7popup');
       }
     }
   </script>
